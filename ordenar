@@ -1,0 +1,27 @@
+var fs = require('fs');
+var archivo = fs.readFileSync('C:/Users/CARMEN/Desktop/prueba.txt', 'utf-8'); //En esta línea va la ruta del txt
+
+var frase= "El Lado Oscuro De La Luna"; //una variable con la frase ordenada
+var espacio = " ";
+var ordenada = "",
+
+    correcta = frase.split(espacio); //una variable que guarde la frase ordenada
+fd = archivo.split(espacio); //una variable con el archivo txt y el método split
+
+console.log("La frase es: ", archivo); //imprimir frases
+console.log("Ordenado: ");
+
+aux = [];
+
+for (var i = 0; i < fd.length; i++) {  //compara la variable del txt y la de la frase ordenada
+    for (var j = 0; j < fd.length; j++) {
+        if (fd[i] == correcta[j]) {
+            aux[j] = fd[i];
+        }
+    }
+}
+
+for (var i = 0; i < aux.length; i++) { // se ordena el txt
+    ordenada += aux[i] + " ";
+    console.log(ordenada);   //imprime el txt ordenado
+}
